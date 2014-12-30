@@ -1,22 +1,16 @@
 Rails.application.routes.draw do
-
   root 'static_pages#home'
 
   get 'help' => 'static_pages'
   get 'contact' => 'static_pages'
   get 'about' => 'static_pages'
-
+  get 'users/new'
 
   resources :microposts
-
   resources :users
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
-
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
