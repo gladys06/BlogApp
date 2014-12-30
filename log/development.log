@@ -7559,3 +7559,897 @@ AbstractController::ActionNotFound (The action 'create' could not be found for U
 
 
   Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/unknown_action.html.erb within rescues/layout (0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-30 18:07:44 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 107ms (Views: 98.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:44 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:44 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:44 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:44 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:44 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:44 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:07:44 +0100
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-12-30 18:07:46 +0100
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (20.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 74ms (Views: 65.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:46 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:46 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:46 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:46 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:46 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:07:46 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:07:46 +0100
+
+
+Started POST "/users" for 127.0.0.1 at 2014-12-30 18:07:57 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+oO8dDPE1iQRrsa77D4vWr0vYmkZt9q+LnRbufS/w8=", "user"=>{"name"=>"mm", "email"=>"itmilos@Outlook.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (3.7ms)[0m  [1mINSERT INTO "users" ("created_at", "password_digest", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-12-30 17:07:57.615557"], ["password_digest", "$2a$10$bNH2X8a7dyvLiVeOEuwgtu3edYEZt9I49RvE8qbg3BtRoBPHbZ05."], ["updated_at", "2014-12-30 17:07:57.615557"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 90ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-12-30 18:07:57 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 7ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:5:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__1785232321834994558_70093874434940'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-12-30 18:08:49 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:5:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__1785232321834994558_70093874434940'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.7ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-12-30 18:08:50 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:5:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__1785232321834994558_70093874434940'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-12-30 18:08:51 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:5:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__1785232321834994558_70093874434940'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.9ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2014-12-30 18:08:52 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:5:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__1785232321834994558_70093874434940'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2014-12-30 18:08:54 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+oO8dDPE1iQRrsa77D4vWr0vYmkZt9q+LnRbufS/w8=", "user"=>{"name"=>"mm", "email"=>"itmilos@Outlook.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:54 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:54 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:54 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:54 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:54 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:54 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:08:54 +0100
+
+
+Started POST "/users" for 127.0.0.1 at 2014-12-30 18:08:59 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+oO8dDPE1iQRrsa77D4vWr0vYmkZt9q+LnRbufS/w8=", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 124ms (Views: 43.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:59 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:59 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:59 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:59 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:59 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:08:59 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:08:59 +0100
+
+
+Started POST "/users" for 127.0.0.1 at 2014-12-30 18:09:07 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+oO8dDPE1iQRrsa77D4vWr0vYmkZt9q+LnRbufS/w8=", "user"=>{"name"=>"mil", "email"=>"itmilos@Outlook.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "password_digest", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-12-30 17:09:07.801130"], ["password_digest", "$2a$10$tAqYwEz5Sq2TVp3QvT1ht.F/tByGJ0/Tp6WY03Pfk7Q9i/J1bEURC"], ["updated_at", "2014-12-30 17:09:07.801130"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 81ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-12-30 18:09:07 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:5:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__1785232321834994558_70093874434940'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (10.2ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:43 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:43 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:43 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:43 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:43 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:43 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:09:43 +0100
+
+
+Started POST "/users" for 127.0.0.1 at 2014-12-30 18:09:45 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+oO8dDPE1iQRrsa77D4vWr0vYmkZt9q+LnRbufS/w8=", "user"=>{"name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 131ms (Views: 40.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:45 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:45 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:45 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:45 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:45 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:09:45 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:09:45 +0100
+
+
+Started POST "/users" for 127.0.0.1 at 2014-12-30 18:09:53 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+oO8dDPE1iQRrsa77D4vWr0vYmkZt9q+LnRbufS/w8=", "user"=>{"name"=>"mmm", "email"=>"itmilos@Outlook.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("created_at", "password_digest", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-12-30 17:09:53.129391"], ["password_digest", "$2a$10$pgdszRZt/NPbQtK4iyqlje7lLFluagy6qmuMgsskvZ8D3Kln6Tufu"], ["updated_at", "2014-12-30 17:09:53.129391"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 86ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2014-12-30 18:09:53 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (no implicit conversion of nil into String):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:5:in `digest'
+  app/helpers/users_helper.rb:5:in `hexdigest'
+  app/helpers/users_helper.rb:5:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb__1785232321834994558_70093874434940'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:10:08 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:10:08 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:10:08 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:10:08 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:10:08 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:10:08 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:10:08 +0100
+
+
+Started GET "/" for 127.0.0.1 at 2014-12-30 18:12:18 +0100
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+Completed 200 OK in 95ms (Views: 84.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:18 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:18 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:18 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:18 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:18 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:18 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:12:18 +0100
+
+
+Started GET "/users/new" for 127.0.0.1 at 2014-12-30 18:12:20 +0100
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (15.6ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 74ms (Views: 65.4ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:20 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:20 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:20 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:20 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:20 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:12:20 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:12:20 +0100
+
+
+Started POST "/users" for 127.0.0.1 at 2014-12-30 18:12:27 +0100
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V+oO8dDPE1iQRrsa77D4vWr0vYmkZt9q+LnRbufS/w8=", "user"=>{"name"=>"itmilos", "email"=>"itmilos@Outlook.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "users" ("created_at", "password_digest", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["created_at", "2014-12-30 17:12:27.734752"], ["password_digest", "$2a$10$ZMUsqb8CB.lRdW8iZe9BZu3kce3aXvIoTaPxUKC52eRQeSiDDtbfy"], ["updated_at", "2014-12-30 17:12:27.734752"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/4
+Completed 302 Found in 91ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:12:27 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:4:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___134031982292288406_70157770501160'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.9ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:12:47 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <!--<%= gravatar_for @user %>-->
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:4:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___134031982292288406_70157769175480'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (13.8ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:13:02 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:13:02 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:13:02 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:13:02 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:13:02 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:13:02 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:13:02 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:13:02 +0100
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:13:22 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 11ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   # <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:4:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___134031982292288406_70157761817780'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (8.6ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:02 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (1.5ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   <!--
+    4:   <%= gravatar_for @user %>
+    5:   -->
+    6:   <%= @user.name %>
+    7: </h1>
+  app/helpers/users_helper.rb:4:in `gravatar_for'
+  app/views/users/show.html.erb:4:in `_app_views_users_show_html_erb___134031982292288406_70157760718460'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (9.2ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:18 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `downcase' for nil:NilClass):
+    1: <% provide(:title, @user.name) %>
+    2: <h1>
+    3:   ## <%= gravatar_for @user %>
+    4:   <%= @user.name %>
+    5: </h1>
+  app/helpers/users_helper.rb:4:in `gravatar_for'
+  app/views/users/show.html.erb:3:in `_app_views_users_show_html_erb___134031982292288406_70157769466200'
+
+
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/Itmilos/.rvm/gems/ruby-2.1.5/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (11.6ms)
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:23 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 33.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:23 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:23 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:23 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:23 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:23 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:23 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:14:23 +0100
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:25 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 42ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:25 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:25 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:25 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:25 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:25 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:25 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:14:25 +0100
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:32 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 39ms (Views: 37.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:32 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:32 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:32 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:32 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:32 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:32 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:14:32 +0100
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 36ms (Views: 34.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:14:33 +0100
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:34 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:34 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:34 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:34 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:34 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:34 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:34 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:14:34 +0100
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:45 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 36ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:45 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:45 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:45 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:45 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:45 +0100
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:45 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:14:45 +0100
+
+
+Started GET "/users/4" for 127.0.0.1 at 2014-12-30 18:14:46 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 4]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:46 +0100
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:46 +0100
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:46 +0100
+
+
+Started GET "/assets/static_pages.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:46 +0100
+
+
+Started GET "/assets/foundation_and_overrides.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:46 +0100
+
+
+Started GET "/assets/microposts.css?body=1" for 127.0.0.1 at 2014-12-30 18:14:46 +0100
+
+
+Started GET "/assets/vendor/modernizr.js?body=1" for 127.0.0.1 at 2014-12-30 18:14:46 +0100
+
+
+Started GET "/users/3" for 127.0.0.1 at 2014-12-30 18:14:49 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2014-12-30 18:14:52 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 42ms (Views: 40.9ms | ActiveRecord: 0.2ms)
